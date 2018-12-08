@@ -11,7 +11,10 @@
                "prove")
   :components ((:module "tests"
                 :components
-                ((:test-file "chun"))))
+                ((:test-file "chun")
+		 (:test-file "git")
+		 (:test-file "html")
+		 )))
   :description "Test system for chun"
 
   :perform (test-op (op c) (symbol-call :prove-asdf :run-test-system c)))

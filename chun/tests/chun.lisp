@@ -8,6 +8,15 @@
 
 (plan nil)
 
-;; blah blah blah.
+(ok 1)
+
+(is 1 1)
+
+(is #(1 2 3) #(1 2 3))
+
+(is #(1 2 3) #(1 2 3) :test #'equalp)
+
+(isnt 1 1)
+
 
 (finalize)

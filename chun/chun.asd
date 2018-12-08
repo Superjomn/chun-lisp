@@ -14,7 +14,10 @@
   :depends-on ("1am")
   :components ((:module "src"
                 :components
-                ((:file "chun"))))
+                ((:file "chun")
+                 (:file "git")
+                 (:file "html")
+            )))
   :description ""
   :long-description
   #.(read-file-string
