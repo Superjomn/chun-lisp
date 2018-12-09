@@ -11,7 +11,7 @@
   :version "0.1.0"
   :author "Superjomn"
   :license ""
-  :depends-on ("1am")
+  :depends-on (:cl-mongo :1am)
   :components ((:module "src"
                 :components
                 ((:file "chun")

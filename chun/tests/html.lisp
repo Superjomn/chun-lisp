@@ -9,9 +9,14 @@
 (plan nil)
 
 (as span "this is a span")
-(with span
-  (as span "span0")
-  (as p "p0"))
+
+(format t "~%macro:~%~A~%" 
+        (macroexpand '(with span 
+                              (as span "span0") 
+                              (as p "p0") 
+                              (as p "p1"))))
+
+
 
 
 (finalize)
