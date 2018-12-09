@@ -11,12 +11,13 @@
   :version "0.1.0"
   :author "Superjomn"
   :license ""
-  :depends-on (:cl-mongo :1am)
+  :depends-on (:cl-mongo :1am :cl-json)
   :components ((:module "src"
                 :components
                 ((:file "chun")
                  (:file "git")
                  (:file "html")
+                 (:file "record")
             )))
   :description ""
   :long-description

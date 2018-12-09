@@ -10,6 +10,3 @@
 
 (defun my-add (a b)
   (+ a b))
-
-(test foo-test
-      (is (= 1 1)))

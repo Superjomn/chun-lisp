@@ -12,8 +12,9 @@
   :components ((:module "tests"
                 :components
                 ((:test-file "chun")
-		 (:test-file "git")
-		 (:test-file "html")
+                 (:test-file "git")
+		             (:test-file "html")
+                 (:test-file "record")
 		 )))
   :description "Test system for chun"
 
