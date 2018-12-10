@@ -5,7 +5,7 @@
            :task
            :kpi
            :kpi-baseline
-           :kpi-to-list
+           :to-list
            :kpi-to-json))
 (in-package :chun-record)
 
@@ -13,7 +13,7 @@
   ((commitid
      :accessor commit-id
      :initarg :commitid)
-   (tasks 
+   (tasks
      :accessor commit-tasks
      :initarg :tasks)
    ;; running, fail, success
@@ -25,14 +25,17 @@
   ;; task's name
   ((name
      :accessor task-name
+     :initform (error "name should be provided")
      :initarg :name)
    ;; the commitid of the codebase the task to test on.
    (commitid
      :accessor task-commitid
+     :initform ""
      :initarg :commitid)
    ;; the kpis of the test result of this task.
    (kpis
      :accessor task-kpis
+     :initform #()
      :initarg :kpis)))
 
  (defclass kpi()
@@ -87,7 +90,7 @@
   "Retrive a commit record from database using the commit-id"
   nil)
 
-(defmethod kpi-to-list ((x kpi))
+(defmethod to-list ((x kpi))
   "transform kpi to a list"
   (list
    (cons "commitid" (kpi-commitid x))
@@ -101,9 +104,17 @@
    (cons "actived" (kpi-actived x))
    ))
 
+(defmethod to-list ((x task))
+  "transform task to a list"
+  (list
+   (cons "name" (task-name x))
+   (cons "commitid" (task-commitid x))
+   (cons "kpis" (task-kpis x))
+   ))
+
 (defmethod kpi-to-json ((x kpi))
   "transform kpi to json"
-  (json:encode-json-to-string (kpi-to-list x)))
+  (json:encode-json-to-string (to-list x)))
 
 (defmethod update-baseline ((x kpi-baseline))
   "Update a KPI baseline."

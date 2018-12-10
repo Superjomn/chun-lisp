@@ -17,6 +17,7 @@
                 ((:file "chun")
                  (:file "git")
                  (:file "html")
+                 (:file "db")
                  (:file "record")
             )))
   :description ""

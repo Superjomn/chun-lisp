@@ -15,6 +15,7 @@
                  (:test-file "git")
 		             (:test-file "html")
                  (:test-file "record")
+                 (:test-file "db")
 		 )))
   :description "Test system for chun"
 

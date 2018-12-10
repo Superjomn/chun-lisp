@@ -10,8 +10,16 @@
                  :name "superjomn"
                  :task-name "task0"))
 
+(defvar task0
+  (make-instance 'task
+                 :commitid "commit0"
+                 :name "task0"))
+
 (format t "~A~%"
-        (kpi-to-list kpi0))
+        (to-list kpi0))
 
 (format t "~A~%"
         (kpi-to-json kpi0))
+
+(format t "~A~%"
+        (to-list task0))
